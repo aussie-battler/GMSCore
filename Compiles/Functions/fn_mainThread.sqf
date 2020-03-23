@@ -10,7 +10,7 @@ while {true} do
    {
        [] call GMS_fnc_monitorMarkers;
        [] call GMS_fnc_monitorObjectDeletionCue;
-       [] call GMS_fnc_monitorAreaPatrols;
+      // [] call GMS_fnc_monitorAreaPatrols;
        _timer60 = diag_tickTime + timerIncrement;
    };
    uisleep timerIncrement;

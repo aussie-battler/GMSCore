@@ -65,7 +65,6 @@ class CfgFunctions {
 			class throwSmoke {};
 			class healSelf {};
 			class unitCanSee {};
-			class crewCanSee {};
 			class unitHit {};
 			class unitKilled {};
 			class unitReloaded {};
@@ -90,9 +89,9 @@ class CfgFunctions {
 			file = "GMSCore\Compiles\Airdrops";
 			class selectDropWaypoint {};
 			class flyInCargoToLocation {};
-			//class dropCargoAtLocation {};
 			class arrivedOnStation {};
 			class cleanUp {};
+			class dropParatroops {};
 			class dropPayload {};
 			class hoverAndDropOff {};
 		};
@@ -129,13 +128,14 @@ class CfgFunctions {
 		class GMS_groups {
 			file = "GMSCore\Compiles\Groups";
 			class boostGroupAttributes {};
-			class createGroup {};			
+			class createGroup {};	
+			class despawnInfantryGroup {};
+			class groupCanSee {};					
 			class getGroupIntelligence {};
 			class groupRemoveAllGear {};
 			class setGroupBehaviors {};
 			class setupGroupMoney {};			
 			class setMaxRelaodsGroup {};
-			class despawnInfantryGroup {};
 			class setupGroupSkills {};
 			class setupGroupGear {};
 			class setupGroupBehavior {};
