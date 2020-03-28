@@ -7,6 +7,8 @@
 		_launchers per group: number of units to have launchers
 		_useNVG: whether to use NVG if it is darl
 	Return: none
+
+	Copyright 2020 Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_group","_despawnTimer"];

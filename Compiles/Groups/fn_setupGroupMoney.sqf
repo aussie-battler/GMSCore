@@ -10,7 +10,9 @@
 
 	Return: none
 
+	Copyright 2020 Ghostrider-GRG-
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_group","_skillLevel","_money"];
 

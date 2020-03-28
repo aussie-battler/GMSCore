@@ -18,7 +18,10 @@
 		_minDamageToHeal: what the damage value from 0..1 should be to trigger the heal mechanic (default 0.4)
 		_smokeShell: the type of smoke shell the unit throws before healing, use "" for none (default none)
 		_maxHeals: how many times a unit is allowed to head (default, 1)
+
 	Return: the group that was spawned.
+
+	Copyright 2020 Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 params[
@@ -63,12 +66,10 @@ for "_i" from 1 to _units do
 	private["_unit"];
 	GMS_unitType createUnit [_pos, _group, "_unit = this", _baseSkill, "COLONEL"];
 	if (GMS_modType isEqualTo "Epoch") then {_unit setVariable ["LAST_CHECK",28800,true]};
-	_unit addMPEventHandler["MPKilled",{_this call GMS_fnc_unitKilled;}];  // Bare minimum killed EH
-	_unit addMpEventHandler["MPHit",{_this call GMS_fnc_unitHit;}];			// bare minimum hit EH
-	_unit addEventHandler["Reloaded",{_this call GMS_fnc_unitReloaded;}];	// Handle all reloads up to the max reloads set for the group
 	_unit enableAI "ALL";
 	//diag_log format["_fn_spawnInfantryGroup: _unit = %1 | side _unit = %2",_unit,side _unit];	
 };
+_group call GMS_fnc_addUnitEventHandlers;
 
 diag_log format["_fnc_spawnInfantryGroup: side _group = %1",side _group];
 _group

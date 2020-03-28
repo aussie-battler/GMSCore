@@ -1,20 +1,14 @@
-// Sets the WP type for WP for the specified group and updates other atributes accordingly.
+
 /*
-	for ghostridergaming
-	By Ghostrider [GRG]
-	Copyright 2016
+	GMS_fnc_setNextWaypoint 
+
+	Purpose: Sets the WP type for WP for the specified group and updates other atributes accordingly.
+
+	Parameters: (leader _group passed as _this)
+
+	Returns: None 
 	
-	--------------------------
-	License
-	--------------------------
-	All the code and information provided here is provided under an Attribution Non-Commercial ShareAlike 4.0 Commons License.
-
-	http://creativecommons.org/licenses/by-nc-sa/4.0/
-
-	TODO: Replaces changeToMoveWaypoint 
-	and
-	Replaces changeToSADWaypoint 
-
+	Copyright 2020 Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 

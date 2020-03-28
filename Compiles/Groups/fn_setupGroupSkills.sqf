@@ -7,7 +7,9 @@
 		_group: the group to which this ACE_explosives_fnc_getPlacedExplosives
 		_skills: an array of skills
 
-	Return: nonoe
+	Return: none
+
+	Copyright 2020 Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_group","_skills"];

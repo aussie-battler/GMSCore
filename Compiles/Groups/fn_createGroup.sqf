@@ -2,7 +2,9 @@
 
     GMS_fnc_createGroup 
     Purpose: create a group on the side set in params 
-    params: ["_side",GMS_side];
+    Parameters: 
+        "_side", side to tie group to, (default is GMS_side);
+        
     Return: group created.
 
     Copyright 2020 by Ghostrider-GRG-

@@ -3,10 +3,14 @@
 
 	Prupose: setup behavior parameters for a group.
 
-	parameters
+	Parameters
 		_group, the group to be HandleScore
 		_garison: when true, the group will not move from its locationNull
 		_swimdepth, for scuba units, how far under the surface to swim.
+
+	Returns: None 
+
+	Copyright 2020 Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_group",["_garrison",false],["_scuba",false],["_swimdepth",0]];
