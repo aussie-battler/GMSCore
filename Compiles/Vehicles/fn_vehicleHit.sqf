@@ -4,11 +4,12 @@
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"
-params["_veh","_causedBy","_damage"];
-//diag_log format["_fnc_HandleAIVehicleHit:  _veh = %1 | _instigator = %2",_veh,_instigator];
+if !(isServer) exitWith {};
 
-if (!(isPlayer _instigator)) exitWith 
-{
-	_veh setDamage ((damage _veh) - _damage;  // No damage from collisions or friendly fire.
-};
-true
+private _unit = _this select 0;
+//private _instigator = _this select 3;
+private _group = group _unit;
+_group setBehaviour "COMBAT";
+_group setCombatMode "RED";
+// TODO: send information to nearby units ?
+// Let GMSAI or GMS handle that.

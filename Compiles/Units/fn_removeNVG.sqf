@@ -11,7 +11,7 @@
     
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
-params["_unit"];
+private _unit = _this;
 private _nvg = _unit getVariable["GMS_nvg",""];
 if !(_nvg isEqualTo "") then
 {

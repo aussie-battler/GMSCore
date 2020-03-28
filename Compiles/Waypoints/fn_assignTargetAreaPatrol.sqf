@@ -17,5 +17,6 @@
 
 params["_group","_target"];
 _group setVariable["GMS_target",_target];
+_group setVariable["GMS_targetGroup",group _target];
 (leader _group) call GMS_fnc_nextWaypointAreaPatrol;
 true

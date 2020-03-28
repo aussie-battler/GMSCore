@@ -4,6 +4,7 @@
 #include "\GMSCore\Init\GMS_defines.hpp"
 private _leader = _this;
 private _group = group _leader;
+private _target = _group getVariable["target",objNull];
 [_group] call GMS_fnc_setWaypointLastCheckedTime;
 private _patrolAreaMarker = _group getVariable["GMS_patroArealMarker",""];
 [format["GMS_fnc_nextWaypointAreaPatrol called for group %1 at time %2 with _patrolAreaMarker = %3",_group,diag_tickTime,_patrolAreaMarker]] call GMS_fnc_log;

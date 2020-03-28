@@ -5,10 +5,24 @@
 
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_veh"];
-_veh enableRopeAttach true;
-_veh enableCoPilot true;
-if (local _veh) then // only bother to fire this on the machine on which the vehicle is local
+private _accessAllowed = _veh getVariable ["GMS_allowAccess",true];
+if !(_accessAllowed) then 
 {
-	_veh lock 1;
+	private _disable = _veh getVariable["GMS_disable",true];
+	private _deleteTime = _veh getVariable ["GMS_deleteTime",120];
+	_veh setDamage _disable;  //  Allows us to totally disable statics if desired
+	[_veh, _deleteTime] call GMS_fnc_addObjectsToDeletionCue;
+} else {
+	_veh enableRopeAttach true;
+	_veh enableCoPilot true;
+	if (_veh getVariable["GMS_removeFuel",true]) then 
+	{
+		_veh setFuel 0;
+	};
+	if (local _veh) then // only bother to fire this on the machine on which the vehicle is local
+	{
+		_veh lock 1;
+	} else {
+		// some fancy remoteExec stuff
+	};
 };
-true

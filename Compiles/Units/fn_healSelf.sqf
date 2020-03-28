@@ -2,12 +2,23 @@
 
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
-(_this select 3) params["_unit"];
-_countFAK = {_x isEqualTo "FAK"} count (magazines _unit);
-if !("FAK" in (magazines _unit)) then 
+private _unit = _this;
+private _group = group _unit;
+
+if ((damage _unit) > (_group getVariable["GMS_minDamageForHeal",0.4]) ) then
 {
-	_unit addMagazine["FAK",1];
+	private _maxHeals = _group getVariable ["GMS_maxHeals",1];
+	private _healsDone = _group getVariable ["GMS_healsDone",0];
+	if (_healsDone >= _maxHeals) exitWith {};
+	private _smokeShell = _group getVariable["GMS_smokeShellOnHeal",""];
+	if !(_smokeShell isEqualTo "") then {
+		_smokeShell createVehicle (position _unit getPos[1,random(359)]);
+	};
+	_unit setVariable["hasHealed",true];
+	_unit addItem "FAK";
+	_unit action ["HealSoldierSelf", _unit];
+	_unit setDamage 0;
+	//uiSleep 1;
+	if ("FAK" in (items _unit)) then {_unit removeItem "FAK"};
 };
-[_unit,["HealSoldierSelf",_unit]] remoteExecCall ["action",_unit];
-[_unit,"FAK"] remoteExecCall ["removeMagazines",_unit];
-_unit addMagazine["FAK",_countFAK];
+

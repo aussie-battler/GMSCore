@@ -10,7 +10,7 @@
 	Return: none.
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
-params["_unit"];
+private _unit = _this;
 private _lancher = _unit getVariable["GMS_launcher",""];
 if !(_lancher isEqualTo "") then
 {
