@@ -3,7 +3,7 @@
 	
 	Purpose: called when the GMS MPHit EH is fired for the vehicle to handle allerting crew to enemy activities. 
 
-	Parameters: per per https://community.bistudio.com/wiki/Arma_3:_Event_Handlers#MPHit  
+	Parameters: per https://community.bistudio.com/wiki/Arma_3:_Event_Handlers#MPHit  
 
 	Returns: None 
 

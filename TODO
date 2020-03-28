@@ -1,15 +1,2 @@
 
-Todo:
-
-    write garbage collector that deals with all types of objects. <Done - fn_monitorObjectDeletionCue
-   Revise code for units, vehicles, wrecks and groups to utilize the garbage collector. <seems to be done>
-   Add function to add classnames to blacklisted items lists for dynamic configurator.
-   Add checks for blacklisted items to dynamic configurator
-   waypoint management when offloaded to clients/HC (HC can load @GMSCore, stream code to other clients.
-   Include temporary markers in garbage collection.  <done> fn_monitorMapMarkers
-   Add calls to get and set a hunting mode variable
-   Add waypoint logic to manage hunting that moves the group from the current array for its type to one for hunting then back upon completion of hunting..
-  Add code to fly in and drop troops at a specified location <done for cargo but may need tweaking and must remove older unused code>
-    Needs a second method for dropping AI. 
-ISSUES
 

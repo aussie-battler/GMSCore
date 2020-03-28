@@ -65,7 +65,7 @@ if !(isNull _target) then
 	_group setVariable["GMS_timeStamp",diag_tickTime];	
 	_group setVariable["GMS_target",_target];
 	_group reveal[_target,1];
-
+	[_group,"combat"] call GMS_fnc_setGroupBehaviors;
 	_wp setWaypointPosition [_nextPos,0];
 	_wp setWaypointType "SAD";
 	_wp setWaypointTimeout [45,60,75];	
@@ -92,6 +92,7 @@ if !(isNull _target) then
 	_wp setWaypointTimeout  [5,7,9];
 	_group setCurrentWaypoint _wp;
 	_group setSpeedMode "NORMAL";
+	[_group,""] call GMS_fnc_setGroupBehaviors;
 	diag_log format["_nextWaypoint: waypoint for group updated to LOITER waypoint at %2",_group,_nextPos];
 };
 

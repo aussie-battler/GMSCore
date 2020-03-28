@@ -7,7 +7,7 @@
 	Parameters: (leader _group passed as _this)
 
 	Returns: None 
-	
+
 	Copyright 2020 Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
@@ -35,8 +35,9 @@ private _maxTime = _group getVariable["maxTime",300];
 //  Extricate stuck group.
 if (diag_tickTime > (_group getVariable "timeStamp") + _maxTime) exitWith 
 {  // try to get unit to move and do antiStuck actions
-	_group setBehaviour "CARELESS";  //  We need them to forget about enemies and move
-	_group setCombatMode "BLUE";  //  We need them to disengage and move
+	[_group, "disengage"] call GMS_fnc_setGroupBehaviors;
+	//_group setBehaviour "CARELESS";  //  We need them to forget about enemies and move
+	//_group setCombatMode "BLUE";  //  We need them to disengage and move
 	private _vector = _wpDir + _arc + 180;  // this should force  units to cross back and forth across the zone being patrolled
 	_group setVariable["wpDir",_vector,true];
 	private _newWPPos = _pos getPos[_patrolRadius,_vector];
@@ -59,7 +60,7 @@ if (isNull _nearestEnemy) then
 	*/
 	private _vector = _wpDir + _arc + 180;  // this should force  units to cross back and forth across the zone being patrolled
 	_group setVariable["wpDir",_vector,true];
-	_group setCombatMode "YELLOW";
+	[_group,""] call GMS_fnc_setGroupBehaviors
 	private _newWPPos = _pos getPos[_patrolRadius,_vector];
 	_wp setWaypointPosition [_newWPPos,0];
 	_group setBehaviour "SAFE";  //  no enemies detected so lets put the group in a relaxed mode
@@ -99,7 +100,7 @@ if (isNull _nearestEnemy) then
 	//diag_log format["_fnc_setextWaypoint:  _pos = %1 | _patrolRadius = %5 |  _newWPPos = %2 | _huntDistance = %3 | _vector = %4",_pos,_newWPPos,_huntDistance,_vector,_patrolRadius];
 	_wp setWaypointPosition [_newWPPos,0];
 	_wp setWaypointBehaviour "SAD";
-	_group setBehaviour "COMBAT";
+	[_group,"combat"] call GMS_fnc_setGroupBehaviors;
 	_wp setWaypointCombatMode "RED";
 	_wp setWaypointTimeout[30,45,60];
 	_wp setWaypointCompletionRadius 0;

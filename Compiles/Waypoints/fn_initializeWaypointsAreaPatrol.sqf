@@ -40,4 +40,5 @@ private _wp = [_group,0];
 _wp setWaypointStatements ["true","this call GMS_fnc_nextWaypointAreaPatrol;"];	
 [_group] call GMS_fnc_addMonitoredAreaPatrol;  //  Add the group to the list of groups that are checked for 'stuck' conditions and for cleanup of markers when the group is deleted
 (leader _group) call GMS_fnc_nextWaypointAreaPatrol;
+[_group,""] call GMS_fnc_setGroupBehaviors;
 [format["GMS_fnc_initializeWaypointsAreaPatrol Completed for group %1",_group]] call GMS_fnc_log;

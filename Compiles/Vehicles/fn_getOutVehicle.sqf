@@ -6,7 +6,7 @@
 
 	Parameters: per https://community.bistudio.com/wiki/Arma_3:_Event_Handlers#GetOut
 
-	Returns: BIS_fnc_respawnNone
+	Returns: None
 
 	Copyright 2020 by Ghostrider-GRG- 
 
