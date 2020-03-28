@@ -11,9 +11,7 @@
 
 	Copyright 2020 by Ghostrider-GRG- 	
 
-	Notes: 3-28-20
-		The way this was written it would not work
-		TODO: Check that it is used and how it is implemented
+	Notes: 
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"

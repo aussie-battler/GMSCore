@@ -14,6 +14,7 @@
 
 	Notes:
 	TODO: not sure we should call nextWaypointAreaPatrol here; think this should be done by a higher level function.	
+	3-28-0:  Not used at present
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"

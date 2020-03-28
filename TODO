@@ -12,7 +12,4 @@ Todo:
   Add code to fly in and drop troops at a specified location <done for cargo but may need tweaking and must remove older unused code>
     Needs a second method for dropping AI. 
 ISSUES
-1. Not sure AI Body deletion is working.
-2. Need a set of functions to fly in and drop paratroops.
-3. Event Handlers for each class of AI (on foot, vehicle, aircraft, ships)
-4. Event handlers for each class of vehicle (land, air, sea)
+
