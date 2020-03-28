@@ -1,5 +1,17 @@
 /*
+	GMS_fnc_removeAllEventHandlers 
 
+	Purpose: generic function to remove all types of EH from an object. 
+
+	Parameters: 
+		_obj: the object from which to remove EH 
+
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG-
+
+	Notes: May not be used 
+	TODO: check if this is needed
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 params[
