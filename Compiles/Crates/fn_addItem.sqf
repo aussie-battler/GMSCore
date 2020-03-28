@@ -1,12 +1,23 @@
 	/*
+		GMS_fnc_addItem 
+		Purpose: Add an item of any type to an object. 
+			// Ensures that the right calls are made for the object type 
 
+		Parameters: 
+			_container: the object to which the item should be added 
+			_itemInfo: an item to be loaded formated as "classnName", ["className", count], or ["className",min count, max count]
+			_addAmmo:  # of magazines to add for a weapon
+
+		Returns: None 
+
+		Copyright 2020 by Ghostrider-GRG-
 	*/
 	#include "\GMSCore\Init\GMS_defines.hpp"
 	
 	params[
-		"_container",  // object into which items should be loaded
-		"_itemInfo",    // an item to be loaded formated as "classnName", ["className", count], or ["className",min count, max count]
-		["_addAmmo",0]  // # of magazines to add for a weapon
+		"_container",  
+		"_itemInfo",    
+		["_addAmmo",0]  
 	];
 	private _quant = 0;
 	private _itemClassName = "";

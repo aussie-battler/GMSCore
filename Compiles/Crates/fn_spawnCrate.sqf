@@ -1,7 +1,15 @@
 /*
-    spawn an object, normally a container of some sort, at a location or at [0,0,0] if none specified.
-    params: classname of crate, location 
+    GMS_fnc_spawnCrate 
+
+    Purpose: spawn an object, normally a container of some sort, at a location or at [0,0,0] if none specified.
+
+    Parameters: 
+        _className: the classname of the object to spawn 
+        _location: location at which to spawn it (optional) 
+
     return: object created of classname specified with all inventory removed 
+
+    Copyright 2020 by Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 

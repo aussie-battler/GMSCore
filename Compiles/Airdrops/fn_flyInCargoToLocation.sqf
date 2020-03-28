@@ -1,11 +1,24 @@
 /*
-    Fly In Cargo To Location
-    Spawns a transport heli , routes it to a location, the heli drops cargo specificed by an array, leaves and despawns.
-    parameters: aircraft class name, cargo (either a single item or array of items), drop location, spawn distance (options, default 2000 m)
+    GMS_fnc_flyInCargoToLocation 
+    Purpose: 
+        Spawns a transport heli , routes it to a location, the heli drops cargo specificed by an array, leaves and despawns.
+    
+    Parameters: aircraft class name, cargo (either a single item or array of items), drop location, spawn distance (options, default 2000 m)
+        _airdropPos: Position at which to drop cargo which can be either paratroops or an object 
+        _aircraftClassName: class name of the type of aircraft to use 
+        _payload: the payload, either a group or object which may be prefilled with stuff 
+        _allowDamage: true/false - when true, the aircraft used to fly in the payload can be damaged by players or AI 
+        _visibleMarker: true/false - when true smoke or a chemlight will be deployed once the payload reaches ground (objects only)
+        _mapMarker: true/false - when true, a temporary marker will be added at the location of the payload (objects only) 
+        _mapMarkerDeleteTime: Number from 0 to infinity - how long to wait before deleteing the above map marker 
+        _spawnDistance: number from 0 to infinity - how far from the drop position to spawn the aircraft 
+    Returns: None 
+
+    Copyright 2020 by Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 //  [_pos,_aircraftType,_payloadObject,_allowDamage,_visibleMarker,_mapMarker,_mapMarkerDeleteTime,_spawnDistance] 
-params["_airdropPos","_aircraftClassName","_payload",["_allowDamage",true],["_visibleMarker",true],["_mapMarker",true],["_mapMarkerDeleteTime",3000],["_spawnDistance",2000]];
+params["_airdropPos","_aircraftClassName","_payload",["_allowDamage",false],["_visibleMarker",true],["_mapMarker",true],["_mapMarkerDeleteTime",3000],["_spawnDistance",2000]];
 //diag_log format["flyInCargoToLocation called at %1",diag_tickTime];
 _labels = ["_airdropPos","_aircraftClassName","_payload","_allowDamage","_visibleMarker","_mapMarker","_mapMarkerDeleteTime","_spawnDistance"];
 {

@@ -1,3 +1,17 @@
+/*
+	GMS_fnc_dropParatroops 
+	Purpose: drops a group of AI defined in _group at location _pos from the optional aircraft defined in _aircraft
+			Where _aircraft is null, AI are dripped in from a point in space with some spacing between them. 
+
+	Parameters: 
+		_group, the group of AI to be dropped by parachute 
+		_pos, the position at which to drop them (the script will do its best to start the airdrop for them at or near this location)
+		_aircraft, (optional) the aircraft from which they are dropped; AI will be dropped behind the aircraft at intervals 
+
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG-
+*/
 
 params["_group","_pos",["_aircraft",objNull]];
 

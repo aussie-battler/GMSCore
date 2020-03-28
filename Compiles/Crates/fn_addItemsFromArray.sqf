@@ -1,10 +1,16 @@
 /**
-    addItemsFromArray
-    Adds N items randomly selected from a weighted array to a container.
+    GMS_fnc_addItemsFromArray
+
+	Purpose: Adds N items randomly selected from a weighted array to a container.
+
     Params: container, weighted array.
+		_container: the object into which the materials should be loaded 
+		_
     Returns: container
 
     Array format: [count, [item1,weight, .. itemn,weight], count2, [item1,weight .. itemN,weight] ... ]
+
+	TODO: think about this a bit more, I dont think it is quite right
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 

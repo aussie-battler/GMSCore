@@ -1,12 +1,20 @@
 /*
-	fn_dropPayload 
+	GMS_fnc_dropPayload 
+
+	Purpose: drop a payload of either an object or group of AI at current location of the aircraft 
+	Parameters: _aircraft, the aircraft from which the payload will be dropped 
+				Note, the script expects that the payload will have been defined as a variable for the aircraft. 
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG-
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"
 private["_marker","_smoke"];
 params["_aircraft"];
 private _payload = _aircraft getVariable "payload";
-if (isNil "_payload") exitWith {};
+if (isNil "_payload") exitWith {[format["No Payload Defined for Aircraft %1",_aircraft],"warning"] call GMS_fnc_log;};
+if (isNull _payload) exitWith {[format["Payload for aircraft %1 is a nullObject",_aircraft],"warning"] call GMS_fnc_log;};
 _aircraft setVariable["payload",nil];
 if (typeName _payload isEqualTo "GROUP") then 
 {

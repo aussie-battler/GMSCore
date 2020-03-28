@@ -1,5 +1,15 @@
 /*
+	GMS_fnc_visibleMarker 
 
+	Purpose: spawn a temporary visible marker above an object 
+
+	Parameters: 
+		_crate: the object above which to spawn the marker 
+		_time: how long the marker should be displayed (optionsl)
+
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 
