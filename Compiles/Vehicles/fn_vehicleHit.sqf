@@ -13,8 +13,7 @@
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"
-// MPHit fires on every machine so be sure we only run this on the server.
-if !(isServer) exitWith {};
+
 private _unit = _this select 0;
 //private _instigator = _this select 3;
 private _group = group _unit;

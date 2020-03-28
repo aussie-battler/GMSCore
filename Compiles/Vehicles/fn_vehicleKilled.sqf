@@ -14,8 +14,7 @@
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"
-// MPKilled fires on every maching so be sure we only run this on the server. Put this here rather than the actual EH to reduce network bandwidth used.
-if !(isServer) exitWith {};
+
 params["_veh"];
 [_veh] call GMS_fnc_removeAllLocalEventHandlers;
 [_veh] call GMS_fnc_removeAllMPEventHandlers;

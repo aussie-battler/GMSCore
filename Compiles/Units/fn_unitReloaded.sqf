@@ -10,6 +10,9 @@
 	Returns: None 
 
 	Copyright 2020 by Ghostrider-GRG-
+
+	Notes: only fires locally (on the machine that owns the AI)
+	TODO: broadcast the code to all clients.
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"
