@@ -1,6 +1,16 @@
 /*
-	Configure a vehicle to allow players access
-	This code should be broadcast ?
+	GMS_fnc_allowPlayerAccess 
+
+	Purpose: Configure a vehicle to allow players access
+	
+	Parameters: _veh, the vehicle to be handled 
+
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG- 
+
+	Notes: variables pulled from the vehicle are set by spawnVehiclePatrol 	
+	TODO: This code should be broadcast ?
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"

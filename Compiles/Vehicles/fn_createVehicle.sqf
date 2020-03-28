@@ -1,5 +1,18 @@
 /*
+	GMS_fnc_createVehicle 
 
+	Purpose: generic function for creating vehicles 
+
+	Parameters:
+		_vehType, classname of the vehicle to be spawned 
+		_pos, position at which to spawn 
+		_dir, compass heading of the vehicle (optional) 
+
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG- 
+
+	Notes: 	Used by SpawnPatrolVehicle 
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_vehType","_pos",["_dir",0]];

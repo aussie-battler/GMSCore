@@ -11,6 +11,8 @@
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"
+// MPKilled fires on every maching so be sure we only run this on the server. Put this here rather than the actual EH to reduce network bandwidth used.
+if !(isServer) exitWith {};
 params["_unit","_killer","_instigator"];
 [format["GMS_fnc_unitKilled: _unit = %1 | _killer = %2",_unit,_killer]] call GMS_fnc_log;
 
