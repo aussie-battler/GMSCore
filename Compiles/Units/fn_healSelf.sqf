@@ -1,5 +1,16 @@
 /*
+	GMS_fnc_healSelf 
 
+	Purpose: causes the unit to heal itself, removing all damage in the process 
+
+	Parameters: 
+		_unit, the unit to heal passed as _this 
+
+	Returns: None
+
+	Notes: variables on the group are set in GMS_fnc_spawnInfantryGroup and are passed to that function as parameters.
+	
+	Copyright 2020 by Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 private _unit = _this;

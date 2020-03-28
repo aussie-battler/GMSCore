@@ -1,6 +1,17 @@
 /*
+	GMS_fnc_unitHit 
 
+	Purpose: fired by the "MPHit" eventhandler for the unit. 
+		It should put the group in combat mode 
+		And test if the unit should heal. 
+
+	Parameters: per https://community.bistudio.com/wiki/Arma_3:_Event_Handlers#MPHit 
+
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG-
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 if !(isServer) exitWith {};
 

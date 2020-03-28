@@ -8,6 +8,8 @@
 		_unit: the unit to be processed
 
 	Return: none.
+
+	Copyright 2020 by Ghostrider-GRG-	
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 private _unit = _this;

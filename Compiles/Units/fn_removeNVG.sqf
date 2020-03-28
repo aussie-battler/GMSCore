@@ -8,8 +8,9 @@
 
     Return: none
 
-    
+	Copyright 2020 by Ghostrider-GRG-    
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 private _unit = _this;
 private _nvg = _unit getVariable["GMS_nvg",""];

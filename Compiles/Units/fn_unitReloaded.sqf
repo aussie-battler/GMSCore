@@ -1,9 +1,17 @@
 /*
 
-_unit addMagazine _newMagazine select 0;
-diag_log format["_processUnitReloaded: _unit %1  _weapon %2  _newMagazine %3",_unit,_weapon,_newMagazine select 0];
+	GMS_fnc_unitReloaded 
 
+	Purpose: called when the "Reloaded" event handler fires for the unit.  
+
+	Parameters: per https://community.bistudio.com/wiki/Arma_3:_Event_Handlers#Reloaded 
+		params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
+
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG-
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
 

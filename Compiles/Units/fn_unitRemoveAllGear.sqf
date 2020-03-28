@@ -3,10 +3,13 @@
 
 	Purpose: strip all gear from a unit.
 
-	Parameters: The unit to be HandleDamage
+	Parameters: The unit to be dealt with. 
 	
 	Return: true
+
+	Copyright 2020 by Ghostrider-GRG-	
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_unit"];
 removeVest _unit;

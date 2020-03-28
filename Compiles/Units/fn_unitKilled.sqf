@@ -1,6 +1,15 @@
 /*
+	GMS_fnc_unitKilled 
 
+	Purpose: called when the MPKilled eventhander fires for the unit   
+
+	Parameters: per https://community.bistudio.com/wiki/Arma_3:_Event_Handlers#MPKilled 
+
+	Returns: none 
+
+	Copyright 2020 by Ghostrider-GRG-
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_unit","_killer","_instigator"];
 [format["GMS_fnc_unitKilled: _unit = %1 | _killer = %2",_unit,_killer]] call GMS_fnc_log;

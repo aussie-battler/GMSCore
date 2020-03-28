@@ -7,6 +7,10 @@
 	Parametsrs:
 		_msg: message to be logged
 		_type: 
+
+	Returns: None 
+
+	
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_msg",["_type",""]];
