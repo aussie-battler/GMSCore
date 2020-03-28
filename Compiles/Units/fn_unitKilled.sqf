@@ -41,9 +41,7 @@ if (units (group _unit) isEqualTo []) then
 {
 	deleteGroup (group _unit);
 } else {
-	private _group = group _unit;	
-	_group setBehaviour "COMBAT";
-	_group setCombatMode "RED";
+	[group _unit,"combat"] call GMS_fnc_setGroupBehaviors;
 	// TODO: send information to nearby units ?
 };
 [_unit] joinSilent GMS_graveyardGroup;
