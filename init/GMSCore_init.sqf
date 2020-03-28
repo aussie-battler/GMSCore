@@ -1,6 +1,7 @@
 /*
 	GMSCore_init 
 	Purpose initialize key global variables and log version number and build information.
+	Parameters: None
 	Return: none 
 	Copyright 2020 by Ghostrider-GRG-
 */

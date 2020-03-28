@@ -1,5 +1,6 @@
 /*
 	Purpose: initialize GMSCore 
+	Parameters: none
 	Return: none
 	By Ghostrider [GRG]
 	Copyright 2020
