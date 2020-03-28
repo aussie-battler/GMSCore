@@ -33,9 +33,12 @@ private _patrolAreaSize = markerSize _patrolAreaMarker;
 if (_group getVariable["GMS_antiStickPatrol",false]) exitWith 
 {
 	// Group needs to be unstuck. (redirected or disengaged from combat and moved.)
+	
 	[format["GMS_fnc_nextWaypoint : anti_stuck condition : unsticking  _group = %1",_group]] call GMS_fnc_log;	
+
 	[_group,"disengage"] call GMS_fnc_setGroupBehaviors;
 	_group setSpeedMode "NORMAL";
+
 	private _wp = [_group,0];
 	_wp setWaypointPosition (markerPos _patrolAreaMarker);
 	_wp setWaypointBehaviour "SAFE";
@@ -52,6 +55,8 @@ if (isNull _target || !(alive _target)) then
 // Hunting waypoints
 if !(isNull _target) then
 {
+	// Enemies nearby, set group to combat mode and engage them
+	
 	[format["GMS_fnc_nextWaypoint : enemies nearby condition : _group = %1",_group]] call GMS_fnc_log;
 	private _wp = [_group,0];
 	private _nextPos = (position _target) getPos [
@@ -77,6 +82,9 @@ if !(isNull _target) then
 
 // Patrol waypoints	
 } else {
+	
+	// Normal execution for next waypoint 
+
 	private _groupPatrolArea = [_patrolAreaCenter, [markerSize _patrolAreaMarker select 0,markerSize _patrolAreaMarker select 1,0,true]];	
 	//params["_areaMarker","_noPositionsToFind",["_units",[]],["_separation",100],["_blackList",[]]];
 	private _nextPos = [_groupPatrolArea,1,[_leader],35,_blacklisted] call GMS_fnc_findRandomPosWithinArea select 0;	
@@ -91,6 +99,7 @@ if !(isNull _target) then
 	_wp setWaypointStatements ["true","this call GMSAI_fnc_nextWaypoint;"];
 	_wp setWaypointTimeout  [5,7,9];
 	_group setCurrentWaypoint _wp;
+
 	_group setSpeedMode "NORMAL";
 	[_group,""] call GMS_fnc_setGroupBehaviors;
 	diag_log format["_nextWaypoint: waypoint for group updated to LOITER waypoint at %2",_group,_nextPos];
