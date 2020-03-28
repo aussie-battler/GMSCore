@@ -1,17 +1,15 @@
 
 /*
-	Checks for groups that have not reached their waypoints within a proscribed period
+	GMS_fnc_monitorAreaPatrols 
+
+	Purpose: Checks for groups that have not reached their waypoints within a proscribed period
 	and redirects them.
 
-	for ghostridergaming
-	By Ghostrider [GRG]
-	Copyright 2016
-	--------------------------
-	License
-	--------------------------
-	All the code and information provided here is provided under an Attribution Non-Commercial ShareAlike 4.0 Commons License.
+	Parameters: None 
 
-	http://creativecommons.org/licenses/by-nc-sa/4.0/
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG- 
 */
 
 // TODO: Test functionality of this

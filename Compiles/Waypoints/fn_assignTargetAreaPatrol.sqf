@@ -1,16 +1,19 @@
 
 /*
-	Adds a group and its patrol area marker
+	GMS_fnc_assignTargetAreaPatrol 
 
-	for ghostridergaming
-	By Ghostrider [GRG]
-	Copyright 2016
-	--------------------------
-	License
-	--------------------------
-	All the code and information provided here is provided under an Attribution Non-Commercial ShareAlike 4.0 Commons License.
+	Pupose: to set the patrol area marker for a group 
 
-	http://creativecommons.org/licenses/by-nc-sa/4.0/
+	Parameters: 
+		_group, the group to handle 
+		_target, the marker defining the target patrol area 
+
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG- 
+
+	Notes:
+	TODO: not sure we should call nextWaypointAreaPatrol here; think this should be done by a higher level function.	
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"
@@ -19,4 +22,3 @@ params["_group","_target"];
 _group setVariable["GMS_target",_target];
 _group setVariable["GMS_targetGroup",group _target];
 (leader _group) call GMS_fnc_nextWaypointAreaPatrol;
-true

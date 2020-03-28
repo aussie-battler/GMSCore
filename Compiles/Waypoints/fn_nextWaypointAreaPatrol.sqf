@@ -1,5 +1,14 @@
 /*
-	GMS_fnc_nextWaypoint 
+	GMS_fnc_nextWaypointAreaPatrol 
+
+	Purpose: set the next waypoint for a grou patroling within a proscribed area set by a map marker 
+
+	Parameters:
+		_this: leader of the group to handle 
+
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG- 	
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 private _leader = _this;

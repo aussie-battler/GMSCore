@@ -1,10 +1,19 @@
 /*
-	GMS_fnc_initializeWaypoints 
-	Can be used to configure a patrol area for any kind of group (infantry, land, air sea)
-	The group will move about within the area circumscribed by the parameters below moving from one randome location to the next.
-	If an enemy is identified, it will move toward that enemy and try to engage.
-	If the group monitor determines tha ta group is 'stuck' meaning has not rotated waypoints within some proscribed period, the group will be disengaged and returned to the center of the patrol area.
+	GMS_fnc_setWaypointStuckValue 
 
+	Purpose: set "_stuckVal" for the group. 
+
+	Parameters: 
+		_group, the group to be handled 
+		_stuckVal, the current _stuckVal 
+	
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG- 
+
+	Notes: 	
+	If the group monitor determines tha ta group is 'stuck' meaning has not rotated waypoints within some proscribed period, the group will be disengaged and returned to the center of the patrol area.
+	TODO: see why the default is false.
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 #define stuckGroup (_this select 0)
