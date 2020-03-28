@@ -10,8 +10,9 @@
 
 	Returns: None 
 
-	
+	Copyright 2020 by Ghostrider-GRG-	
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_msg",["_type",""]];
 private _log = "";
