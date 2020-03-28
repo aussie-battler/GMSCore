@@ -73,6 +73,7 @@ class CfgFunctions {
 			class addUnitEventHandlers {};
 			class boostGroupAttributes {};
 			class createGroup {};	
+			class createUnmanedVehicleCrew {};
 			class despawnInfantryGroup {};
 			class groupCanSee {};					
 			class getGroupIntelligence {};
