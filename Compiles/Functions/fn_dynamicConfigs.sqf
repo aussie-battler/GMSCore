@@ -9,7 +9,7 @@
 		_blacklistedCategories an array of subcategories to be ignored, such as "watch"
 		_blacklistedClassnameRoots an array of strings. Any classname containing one of more of these will be excluded, such as "CUP".
 
-	Returns an array of arryas:
+	Returns an array of arrays:
 	_return = [
 	_wpnAR,			// 0
 	_wpnLMG,		// 1
@@ -42,6 +42,8 @@
 	_foodAndDrinks,	// 28  {mod-specific food and drinks}
 	_lootItems		// 24 (mod-specific loot itmes such as car parts, raw materials, defib and the like)
 	];
+
+	Copyright 2020 by Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 params[["_maximumPrice",1000],["_blackListedItems",[]],["_blacklistedCategories",[]],["_blacklistedClassnameRoots",[]]];

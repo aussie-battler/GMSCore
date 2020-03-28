@@ -1,6 +1,15 @@
 /*
+	GMS_fnc_monitorMarkers 
 
+	Purpose: monitor the cue of markers that are scheduled for deletion and delete them at the proper time. 
+
+	Parameters: None 
+
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG-
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 for "_i" from 1 to (count GRGCore_monitoredMarkers) do 
 {

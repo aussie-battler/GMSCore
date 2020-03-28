@@ -7,8 +7,9 @@
 	Parametsrs:
 		_classnames: an array of strings, each representing a possible className
 
-		_return: the array with invalid classnames removed and logged.
+	Returns: the array with invalid classnames removed and logged.
 
+	Copyright 2020 by Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_classNames"];

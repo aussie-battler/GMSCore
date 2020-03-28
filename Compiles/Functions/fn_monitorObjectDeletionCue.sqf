@@ -1,6 +1,15 @@
 /*
+    GMS_fnc_monitorObjectDeletionCue 
 
+    Purpose: check objects in the cue for deletion and delete at the proper time. 
+
+    Parameters: None 
+
+    Return: None 
+
+    Copyright 2020 by Ghostrider-GRG-
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 for "_i" from 1 to (count GRGCore_monitoredObjects) do
 {

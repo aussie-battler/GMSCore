@@ -10,6 +10,8 @@
 	Returns
 		0 if none of the substrings are found
 		1 - N repreenting the number of substrings found, if one or more is found.
+
+	Copyright 2020 by Ghostrider-GRG-
 		
 */
 #include "\GMSCore\Init\GMS_defines.hpp"

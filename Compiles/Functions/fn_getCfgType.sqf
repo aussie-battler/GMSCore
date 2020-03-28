@@ -7,7 +7,9 @@
 
     Return: The name of the config file to use.
 
+    Copyright 2020 by Ghostrider-GRG-
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_item"];
 private _return = "";

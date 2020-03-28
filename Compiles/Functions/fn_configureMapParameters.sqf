@@ -1,5 +1,14 @@
 /*
+	GMS_fnc_configureMapParameters 
 
+	Purpose: set map center and size based on worldName 
+	Notes: I included this because the worldSize/Mapcenter returned from configs is sometimes not sufficiently accurate for this kind of application 
+
+	Parameters: None 
+
+	Returns: None 
+
+	Copyright 2020 by Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 switch (toLower worldName) do 

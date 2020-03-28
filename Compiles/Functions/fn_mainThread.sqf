@@ -1,6 +1,15 @@
 /*
-    Scheduler for everything that runs on the module.
+   GMS_fnc_mainThread 
+
+   Purpose: Scheduler for everything that runs on the module.
+
+   Parameters: None 
+
+   Returns: None 
+
+   Copyright 2020 by Ghostrider-GRG- 
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 #define timerIncrement 60
 private  _timer60 = diag_tickTime;

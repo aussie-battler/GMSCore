@@ -2,15 +2,17 @@
 
 	GMS_fnc_checkClassnamesWeightedArray
 
-	Purpose: to validate classnames in a weighted array used for AI gear or other puposes
+	Purpose: to validate classnames in a weighted array
 	Notes: Array format is assumed to be "classname",weight,"classname2",weight2 ...
 
 	Parametsrs:
 		_classnames: an array of strings, each representing a possible className
+	
+	Returns: the array with invalid classnames logged and removed.
 
-		_return: the array with invalid classnames logged and removed.
-
+	Copyright 2020 by Ghostrider-GRG-
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_classNames"];
 

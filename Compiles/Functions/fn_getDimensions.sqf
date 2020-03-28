@@ -1,7 +1,17 @@
 /*
-// CREDITS: https://community.bistudio.com/wiki/boundingBoxReal
-// fn_getDimensions: returns width, length and height based on boundingBoxReal
+	GMS_fnc_getDimensions
+
+	Purpose: returns width, length and height based on boundingBoxReal
+	
+	parameters: 
+		_object: the object for which the dimensions are desired 
+
+	Returns:
+		an array containing  [_maxWidth,_maxLength,_maxHeight]
+
+	CREDITS: https://community.bistudio.com/wiki/boundingBoxReal
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_object"];
 _bbr = boundingBoxReal vehicle player;

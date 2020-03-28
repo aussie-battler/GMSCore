@@ -2,9 +2,15 @@
 	GMS_fnc_isClass
 
 	Purpose: determine if a string is a valid className
-	Parameters: _item, a string to be interrogated.
-	Returns: true if the string is a valid classname.
+	Parameters: 
+		_item, a string to be interrogated.
+
+	Returns: 
+		true if the string is a valid classname.
+
+	Copyright 2020 by Ghostrider-GRG-
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_item"];
 private _result = false;

@@ -9,7 +9,12 @@
 		_units: players or units from which a certain spacing should be kbRemoveTopic
 		_separation: the spacing to use for positions, players/units, effectiveCommander
 		_blackList: a list of areas to be avoided.
+	
+	Returns: an array of the positions found within the area proscribed by _areaMarker 
+
+	Copyright 2020 by Ghostrider-GRG-
 */
+
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_areaMarker","_noPositionsToFind",["_units",[]],["_separation",100],["_blackList",[]]];
 {_blackList pushBack [getPos _x, _separation]} forEach _units;
