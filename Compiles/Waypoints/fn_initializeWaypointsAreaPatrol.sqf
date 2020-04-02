@@ -1,5 +1,5 @@
 /*
-	GMS_fnc_initializeWaypoints 
+	GMS_fnc_initializeWaypointsAreaPatrol 
 	
 	Purpose: Can be used to configure a patrol area for any kind of group (infantry, land, air sea)
 
@@ -26,8 +26,13 @@ params["_group",  // group for which to configure / initialize waypoints
 		["_timeout",300]
 	];  
 
-if (_patrolAreaMarker isEqualTo "") exitWith {
-	[format["No Marker Provided in Call To initializeWaypointsAreaPatrol"],"error"] call GMS_fnc_log;
+if (GMS_debug >=1) then 
+{
+	[format["_patrolAreaMarker = %1 | typeName _patrolAreaMarker = %2",_patrolAreaMarker, typeName _patrolAreaMarker],"information"] call GMS_fnc_log;
+
+	if (_patrolAreaMarker isEqualTo "" || !(typeName _patrolAreaMarker isEqualTo "STRING")) exitWith {
+		[format["No valid Marker Provided in Call To initializeWaypointsAreaPatrol"],"error"] call GMS_fnc_log;
+	};
 };
 
 [format["_fnc_initializeWaypoints called for group %1",_group]] call GMS_fnc_log;

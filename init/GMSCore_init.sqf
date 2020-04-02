@@ -6,7 +6,7 @@
 	Copyright 2020 by Ghostrider-GRG-
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
-
+call compileFinal preprocessFileLineNumbers "\GMSCore\configs\GMS_configs.sqf";
 GMS_modType = if (!isNull (configFile >> "CfgPatches" >> "exile_server")) then {"Exile"} else {if (!isnull (configFile >> "CfgPatches" >> "a3_epoch_server")) then {"Epoch"} else {"default"}};
 if ((tolower GMS_modType) isEqualto "epoch") then {
 	GMS_Side = INDEPENDENT;
