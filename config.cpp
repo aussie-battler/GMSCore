@@ -34,19 +34,22 @@ class CfgFunctions {
 			class addObjectToDeletionCue {};
 			//class configureMapParameters {};
 			//class addObjectsToDeletionCue {};
+			class checkClassnamesArray {};			
+			class dynamicConfigs {};	
+ 			class findRandomPosWithinArea {};	
+			class getDimensions {};			 				
 			class getNumberFromRange {};
 			class getIntegerFromRange {};
-			class dynamicConfigs {};
- 			class findRandomPosWithinArea {};
 			class getCfgType {};
 			class isClass {};
-			class checkClassnamesArray {};
+			class isUAV {};
+
 			//class checkClassnamesWeightedArray {};
 			class removeBlacklistedItems {};
 			class substringsPresentInString {};
 			//class removeEventHandlers {};
 			//class removeMPEventHandlers {};
-			class getDimensions {};
+
 			class mainThread {};
 			class monitorMarkers {};
 			//class monitorGroups {};
