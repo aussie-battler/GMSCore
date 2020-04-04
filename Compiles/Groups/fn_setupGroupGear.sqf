@@ -17,10 +17,12 @@
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_group","_gear",["_launchersPerGroup",1],["_useNVG",false],["_addWeaponAttachments",true]];
 {
-	diag_log format
-	["_fnc_setUpGroupGear: _gear %1 = %2",["_group","_gear","_lanchersPerGroup","_useNVG","_addWeaponAttachments"] select _forEachIndex,
-	_x];
+	diag_log format ["_fnc_setUpGroupGear: _this %1 = %2",["_group","_gear","_lanchersPerGroup","_useNVG","_addWeaponAttachments"] select _forEachIndex,_x];
 }forEach _this;
+
+{
+	diag_log format["_fnc_setUpGroupGear: _gear %1 = %2",_forEachIndex,_x];
+} forEach _gear;
 
 #define GMS_primary 0
 #define GMS_secondary 1

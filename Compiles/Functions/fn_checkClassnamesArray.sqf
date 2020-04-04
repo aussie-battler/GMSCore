@@ -13,15 +13,19 @@
 */
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_classNames"];
-
 private _return = [];
-{
-	if ([_x] call GMS_fnc_isClass) then 
-	{
-		_return pushBack _x;
-	} else {
-		diag_log format["[GMSCore] fn_checkClassNames: invalid classname %1",_x];
-	};
-} forEach _classNames;
+if (count(_classNames select 1) == 2) then
+ {
+	 _return = [_classNames] call GMS_fnc_checkClassnamesWeightedArray;
+} else {
 
+	{
+		if ([_x] call GMS_fnc_isClass) then 
+		{
+			_return pushBack _x;
+		} else {
+			diag_log format["[GMSCore] fn_checkClassNames: invalid classname %1",_x];
+		};
+	} forEach _classNames;
+};
 _return
