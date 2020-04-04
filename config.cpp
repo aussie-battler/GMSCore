@@ -41,7 +41,7 @@ class CfgFunctions {
 			class getCfgType {};
 			class isClass {};
 			class checkClassnamesArray {};
-			class checkClassnamesWeightedArray {};
+			//class checkClassnamesWeightedArray {};
 			class removeBlacklistedItems {};
 			class substringsPresentInString {};
 			//class removeEventHandlers {};

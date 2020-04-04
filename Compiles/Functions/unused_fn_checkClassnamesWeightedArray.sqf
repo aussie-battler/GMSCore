@@ -17,15 +17,18 @@
 params["_classNames"];
 
 private _return = [];
+for "_i" from 0 to (count _classNames) step 2 do 
 {
-	private _element = _x;
-	_element params["_item","_weight"];
+	diag_log format["[GMS] _checkClassNamesWeightArray:  _item = %1 | _weight = %2",_classNames select _i,_classNames select (_i +1)];
+	private _item = _className select _i;
+
 	if ([_item] call GMS_fnc_isClass) then 
 	{
+		private _weight = _classNames select (_i +1);		
 		_return pushBack [_item,_weight];
 	} else {
 		diag_log format["[GMSCore] fn_checkClassNames: invalid classname %1",_x];
 	};
-} forEach _classNames;
+};
 
 _return
