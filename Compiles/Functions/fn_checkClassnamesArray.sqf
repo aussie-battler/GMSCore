@@ -52,5 +52,5 @@ if !(_classNames isEqualTo []) then
 } else {
 		_return = _classNames;
 };
-diag_log format["[GMS] _checkClassNamesArray: returning filtered array = %1",_return];
+
 _return

@@ -42,5 +42,5 @@ if !(_items isEqualTo [] || _blacklist isEqualTo []) then
 } else {
 	_filtered = _items;
 };
-diag_log format["[GMS] _removeBlacklistedItems: returning cleaned array = %1",_filtered];
+
 _filtered

@@ -38,5 +38,5 @@ _group setVariable ["GMS_group",true];
 		_x swiminDepth _swimdepth;
 	};
 	_x setVariable["GMS_Units",true];
-	diag_log format["_setupGroupBehavior: _group = %1 | _unit = %2 | side _unit = %3",_group,_x, side _x];
+	//diag_log format["_setupGroupBehavior: _group = %1 | _unit = %2 | side _unit = %3",_group,_x, side _x];
 } forEach units _group;

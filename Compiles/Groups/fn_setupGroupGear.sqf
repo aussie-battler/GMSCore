@@ -16,13 +16,6 @@
 
 #include "\GMSCore\Init\GMS_defines.hpp"
 params["_group","_gear",["_launchersPerGroup",1],["_useNVG",false],["_addWeaponAttachments",true]];
-{
-	diag_log format ["_fnc_setUpGroupGear: _this %1 = %2",["_group","_gear","_lanchersPerGroup","_useNVG","_addWeaponAttachments"] select _forEachIndex,_x];
-}forEach _this;
-
-{
-	diag_log format["_fnc_setUpGroupGear: _gear %1 = %2",_forEachIndex,_x];
-} forEach _gear;
 
 #define GMS_primary 0
 #define GMS_secondary 1
@@ -54,7 +47,6 @@ private _lanchersAdded = 0;
 (_gear select GMS_medical) params["_medical",["_chanceMedical",0.5]];
 (_gear select GMS_loot) params["_loot",["_chanceLoot",0.5]];
 
-//diag_log format["<--- START MAIN LOOP --->"];
 {
 	private _unit = _x;
 	[_unit] call GMS_fnc_unitRemoveAllGear;	
@@ -62,12 +54,12 @@ private _lanchersAdded = 0;
 	if (random(1) < _chanceUniform && !(_uniforms isEqualTo [])) then {_unit forceAddUniform (selectRandom (_uniforms))};
 	if ( (random(1) < _chanceVest)  isEqualTo [] && !(_vests isEqualTo [])) then {_unit addVest (selectRandom _vests)};	
 	if (random(1) < _chanceBackpack && !(_backpacks isEqualTo [])) then {_unit addBackpack selectRandom _backpacks};
-	//diag_log format["fn_setupGroupGear: _weapons = %1",_weapons];
+
 	if ((random(1) < _chancePrimary) && !(_weapons isEqualTo [])) then
 	{
 		private _weap = selectRandom _weapons;  
 		_unit addWeaponGlobal  _weap; 
-		//diag_log format["_setupGroupGear: weapon %1 added to unit %2",_weap,_unit];
+
 		private _ammoChoices = getArray (configFile >> "CfgWeapons" >> _weap >> "magazines");
 		private _underbarrel = getArray (configFile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "UnderBarrelSlot" >> "compatibleItems");
 		_unit addMagazines [selectRandom _ammoChoices, 3];
@@ -83,7 +75,7 @@ private _lanchersAdded = 0;
 		};
 		if ((count(getArray (configFile >> "cfgWeapons" >> _weap >> "muzzles"))) > 1) then {_unit addMagazine "1Rnd_HE_Grenade_shell"};
 	};
-	//diag_log format["_fnc_setGroupGear: _secondaryWeapons = %1",_secondaryWeapons];
+
 	if (random(1) < _chanceSecondaryWeapon && !(_secondaryWeapons isEqualTo [])) then
 	{
 		private _weap = selectRandom _secondaryWeapons;
@@ -105,9 +97,7 @@ private _lanchersAdded = 0;
 	{
 		for "_i" from 1 to 2 do{_unit addItem (selectRandom _food)};
 	};
-	//diag_log format["_setupGroupGear: (_gear select GMS_loot) = %1",(_gear select GMS_loot)];
-	//diag_log format["_setupGroupGear: _loot = %1",_loot];
-	//diag_log format["_setupGroupGear: _chanceLoot = %1",_chanceLoot];
+
 	if (random(1) < _chanceLoot && !(_food isEqualTo [])) then
 	{
 		for "_i" from 1 to 2 do {_unit addItem (selectRandom (_medical + _loot))};
@@ -133,13 +123,12 @@ private _lanchersAdded = 0;
 			_lanchersAdded = _lanchersAdded + 1;
 		};
 	};
-	//diag_log format["_setupGroupGear:  _nvg = %1",_nvg];
+
 	if !(_nvg isEqualTo [] && random(1) < _chanceNVG) then
 	{
 		if(sunOrMoon < 0.2 && _useNVG)then
 		{
 			private _selectedNVG = selectRandom _nvg;
-			//diag_log format["_setupGroupGear:  _selectedNVG = %1",_selectedNVG];
 			_unit addWeapon _selectedNVG;
 			_unit setVariable["GMS_nvg",_selectedNVG];
 		};
