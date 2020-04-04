@@ -15,8 +15,13 @@
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"
-params["_group","_gear",["_launchersPerGroup",1],["_useNVG",false]];
-//{diag_log format["_fnc_setUpGroupGear: _gear %1 = %2",_forEachIndex,_x]}forEach _gear;
+params["_group","_gear",["_launchersPerGroup",1],["_useNVG",false],["_addWeaponAttachments",true]];
+{
+	diag_log format
+	["_fnc_setUpGroupGear: _gear %1 = %2",["_group","_gear","_lanchersPerGroup","_useNVG","_addWeaponAttachments"] select _forEachIndex,
+	_x];
+}forEach _this;
+
 #define GMS_primary 0
 #define GMS_secondary 1
 #define GMS_throwable 2
@@ -62,15 +67,18 @@ private _lanchersAdded = 0;
 		_unit addWeaponGlobal  _weap; 
 		//diag_log format["_setupGroupGear: weapon %1 added to unit %2",_weap,_unit];
 		private _ammoChoices = getArray (configFile >> "CfgWeapons" >> _weap >> "magazines");
-		private _optics = getArray (configfile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems");
-		private _pointers = getArray (configFile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "PointerSlot" >> "compatibleItems");
-		private _muzzles = getArray (configFile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems");
 		private _underbarrel = getArray (configFile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "UnderBarrelSlot" >> "compatibleItems");
 		_unit addMagazines [selectRandom _ammoChoices, 3];
-		if (random 1 < _chancePrimaryMuzzle ) then {_unit addPrimaryWeaponItem (selectRandom _muzzles)};
-		if (random 1 < _chancePrimaryOptic) then {_unit addPrimaryWeaponItem (selectRandom _optics)};
-		if (random 1 < _chancePrimaryPointer) then {_unit addPrimaryWeaponItem (selectRandom _pointers)};
-		if (random 1 < _chancePrimaryUnderbarrel) then {_unit addPrimaryWeaponItem (selectRandom _underbarrel)};
+
+		{
+			private _optics = getArray (configfile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems");
+			private _pointers = getArray (configFile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "PointerSlot" >> "compatibleItems");
+			private _muzzles = getArray (configFile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems");			
+			if (random 1 < _chancePrimaryMuzzle ) then {_unit addPrimaryWeaponItem (selectRandom _muzzles)};
+			if (random 1 < _chancePrimaryOptic) then {_unit addPrimaryWeaponItem (selectRandom _optics)};
+			if (random 1 < _chancePrimaryPointer) then {_unit addPrimaryWeaponItem (selectRandom _pointers)};
+			if (random 1 < _chancePrimaryUnderbarrel) then {_unit addPrimaryWeaponItem (selectRandom _underbarrel)};
+		};
 		if ((count(getArray (configFile >> "cfgWeapons" >> _weap >> "muzzles"))) > 1) then {_unit addMagazine "1Rnd_HE_Grenade_shell"};
 	};
 	//diag_log format["_fnc_setGroupGear: _secondaryWeapons = %1",_secondaryWeapons];
@@ -78,13 +86,16 @@ private _lanchersAdded = 0;
 	{
 		private _weap = selectRandom _secondaryWeapons;
 		private _ammoChoices = getArray (configFile >> "CfgWeapons" >> _weap >> "magazines");
-		_unit addMagazines [selectRandom _ammoChoices, 2];				
-		private _optics = getArray (configfile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems");
-		private _pointers = getArray (configFile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "PointerSlot" >> "compatibleItems");
-		private _muzzles = getArray (configFile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems");
-		if (random 1 < _chanceSecondaryWeaponMuzzle) then {_unit addSecondaryWeaponItem  (selectRandom _muzzles)};
-		if (random 1 < _chanceSecondaryWeaponOptic) then {_unit addSecondaryWeaponItem  (selectRandom _optics)};
-		if (random 1 < _chanceSeconaryWeaponPointer) then {_unit addSecondaryWeaponItem  (selectRandom _pointers)};			
+		_unit addMagazines [selectRandom _ammoChoices, 2];
+
+		{		
+			private _optics = getArray (configfile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "CowsSlot" >> "compatibleItems");
+			private _pointers = getArray (configFile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "PointerSlot" >> "compatibleItems");
+			private _muzzles = getArray (configFile >> "CfgWeapons" >> _weap >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems");
+			if (random 1 < _chanceSecondaryWeaponMuzzle) then {_unit addSecondaryWeaponItem  (selectRandom _muzzles)};
+			if (random 1 < _chanceSecondaryWeaponOptic) then {_unit addSecondaryWeaponItem  (selectRandom _optics)};
+			if (random 1 < _chanceSeconaryWeaponPointer) then {_unit addSecondaryWeaponItem  (selectRandom _pointers)};			
+		};
 	};
 	if (random(1) < _chanceThrowables && !(_throwables isEqualTo [])) then {_unit addItem selectRandom (_throwables)};
 	if (random(1) < _chanceBinoculars && !(_binoculars isEqualTo [])) then {_unit addWeapon (selectRandom _binoculars)};

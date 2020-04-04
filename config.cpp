@@ -7,7 +7,7 @@
 class GMSCoreBuild {
 	version = 1;
 	build = 1;
-	buildDate = "3-20-20";
+	buildDate = "4-3-20";
 };
 class CfgPatches {
 	class GMSCore {
@@ -21,13 +21,13 @@ class CfgFunctions {
 	class GMS {
 		class GMS_Airdrops {
 			file = "GMSCore\Compiles\Airdrops";
-			class selectDropWaypoint {};
-			class flyInCargoToLocation {};
 			class arrivedOnStation {};
 			class cleanUp {};
 			class dropParatroops {};
 			class dropPayload {};
+			class flyInCargoToLocation {};			
 			class hoverAndDropOff {};
+			class selectDropWaypoint {};			
 		};		
 		class GMS_CoreFunctions {
 			file = "GMSCore\Compiles\Functions";
@@ -42,6 +42,7 @@ class CfgFunctions {
 			class isClass {};
 			class checkClassnamesArray {};
 			class checkClassnamesWeightedArray {};
+			class removeBlacklistedItems {};
 			class substringsPresentInString {};
 			//class removeEventHandlers {};
 			//class removeMPEventHandlers {};
@@ -71,6 +72,8 @@ class CfgFunctions {
 		class GMS_Groups {
 			file = "GMSCore\Compiles\Groups";
 			class addUnitEventHandlers {};
+			class alertGroup {};
+			class allertNearestGroup {};
 			class boostGroupAttributes {};
 			class createGroup {};	
 			class createUnmanedVehicleCrew {};

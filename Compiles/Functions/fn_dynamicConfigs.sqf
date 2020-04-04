@@ -109,7 +109,7 @@ _lootItems = [];
 _baseClasses = [];	
 _classnameList = [];
 _classNamesAdded = [];
-private["_classnameList"];
+private "_classnameList";
 if (toLower(GMS_ModType) isEqualTo "epoch") then
 {
 	_classnameList = (missionConfigFile >> "CfgPricing" ) call BIS_fnc_getCfgSubClasses;
@@ -164,6 +164,7 @@ if (toLower(GMS_ModType) isEqualTo "epoch") then
 		};
 	} forEach (_generic + _genericAuto + _genericBed + _genericLarge + _toolsLoot + _medicalLoot);
 };
+
 if (toLower(GMS_modType) isEqualTo "exile") then
 {
 	_classnameList = (missionConfigFile >> "CfgExileArsenal" ) call BIS_fnc_getCfgSubClasses;
@@ -180,6 +181,11 @@ private ["_price"];  // here for scope only
 		if (toLower(GMS_modType)  isEqualTo "exile") then
 		{
 			_price = getNumber(missionConfigFile >> "CfgExileArsenal" >> _x >> "price");
+		};
+		if !([_itemClassName] call GMS_fnc_isClass) then 
+		{
+			[format["Invalid classname used: %1",_itemClassName],"warning"] call GMS_fnc_log;
+			_price = _maximumPrice + 100;
 		};
 		if (_price < _maximumPrice) then
 		{

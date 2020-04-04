@@ -38,7 +38,8 @@ params[
 		["_minDamageToHeal",0.4],
 		["_maxHeals",1],
 		["_smokeShell",""]
-	];
+];
+
 private _p = ["_pos","_units","_side","_baseSkill","_alertDistance","_intelligence","_bodycleanuptimer","_maxReloads","_removeLaunchers","_removeNVG","_minDamageToHeal","_maxHeals","_smokeShell"];
 
 {
