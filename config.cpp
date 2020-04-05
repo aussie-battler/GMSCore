@@ -132,6 +132,7 @@ class CfgFunctions {
 			file = "GMSCore\Compiles\Vehicles";
 			class allowPlayerVehicleAccess {};
 			class createVehicle {};
+			class destroyVehicleAndCrew  {};
 			class getOutVehicle {};
 			class vehicleHandleDamage {};
 			class initializePatrolVehicle {};
