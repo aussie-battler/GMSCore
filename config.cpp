@@ -46,6 +46,8 @@ class CfgFunctions {
 
 			//class checkClassnamesWeightedArray {};
 			class removeBlacklistedItems {};
+			class setOnRunoverHipointsDamage {};
+			class setOnRunoverNoHitpointsDamaged [];
 			class substringsPresentInString {};
 			//class removeEventHandlers {};
 			//class removeMPEventHandlers {};

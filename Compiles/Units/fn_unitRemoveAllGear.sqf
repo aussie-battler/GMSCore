@@ -11,7 +11,7 @@
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"
-params["_unit"];
+private _unit = _this;
 removeVest _unit;
 removeHeadgear _unit;
 removeGoggles _unit;

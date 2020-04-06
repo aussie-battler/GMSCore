@@ -29,6 +29,8 @@ GRGCore_monitoredMarkers = [];
 GRGCore_monitoredObjects = [];
 GMSCore_monitoredGroups = [];
 GMSCore_monitoredAreaPatrols = [];
+GMSCore_onRunoverHitpointDamage = [0.3-0.6];
+GMSCore_onRunoverNoHitPointsDamaged = [1,4];
 
 if (GMS_modType isEqualTo "Epoch") then
 {
