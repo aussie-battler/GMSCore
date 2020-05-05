@@ -13,13 +13,13 @@
 
 */
 
-params["_unit","_killer","_instigator",["_methods",[1]];
+params["_unit","_killer","_instigator",["_methods",[1]]];
 
 {
 	switch (_method) do 
 	{
 		case 1: {  // revive unit
-			[_unit setDamage 0;
+			_unit setDamage 0;
 			private _hp = getAllHitPointsDamage _unit;
 			private _hpNames = _hp select 0;
 			private _hpValues = _hp select 2;

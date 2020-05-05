@@ -57,3 +57,6 @@ if (units (group _unit) isEqualTo []) then
 [_unit] joinSilent GMS_graveyardGroup;
 
 // TODO: Add runover checks ?
+{
+		_this call _x;
+} forEach (_group getVariable ["chainedMPkilled",[]]);

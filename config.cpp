@@ -27,13 +27,12 @@ class CfgFunctions {
 			class dropPayload {};
 			class flyInCargoToLocation {};			
 			class hoverAndDropOff {};
-			class selectDropWaypoint {};			
+			class selectDropWaypoint {};
+			class setAircraftPayload {};							
 		};		
 		class GMS_CoreFunctions {
 			file = "GMSCore\Compiles\Functions";
 			class addObjectToDeletionCue {};
-			//class configureMapParameters {};
-			//class addObjectsToDeletionCue {};
 			class checkClassnamesArray {};			
 			class dynamicConfigs {};	
  			class findRandomPosWithinArea {};	
@@ -43,23 +42,13 @@ class CfgFunctions {
 			class getCfgType {};
 			class isClass {};
 			class isUAV {};
-
-			//class checkClassnamesWeightedArray {};
 			class removeBlacklistedItems {};
 			class setOnRunoverHipointsDamage {};
-			class setOnRunoverNoHitpointsDamaged [];
+			class setOnRunoverNumberHitpointsDamaged {};
 			class substringsPresentInString {};
-			//class removeEventHandlers {};
-			//class removeMPEventHandlers {};
-
 			class mainThread {};
 			class monitorMarkers {};
-			//class monitorGroups {};
-			// class monitorVehicles {};
 			class monitorObjectDeletionCue {};
-			//class removeAllEventHandlers {};
-			//class removeAllMPEventHandlers {};
-			//class monitorCorpses {};
 		};
 		class GMS_Client {
 			file = "GMSCore\Compiles\Client";
@@ -92,7 +81,6 @@ class CfgFunctions {
 			class setupGroupSkills {};
 			class setupGroupGear {};
 			class setupGroupBehavior {};
-			//class setGroupBodyDespawnTime {};	
 			class spawnInfantryGroup {};					
 		};		
 		class GMS_Initialization {
@@ -113,6 +101,7 @@ class CfgFunctions {
 			class giveTakeRespect {};
 			class giveTakeTabs {};
 			class updatePlayerKills {};
+			class unitRunover {};
 		};
 		class GMS_Utilities {
 			file = "GMSCore\Compiles\Utilities";
@@ -120,15 +109,15 @@ class CfgFunctions {
 		};
 		class GMS_Units {
 			file = "GMSCore\Compiles\Units";
-			class unitRemoveAllGear {};
+			class addChainedMPKilled {};
 			class removeNVG {};
 			class removeLauncher {};			
-			//class throwSmoke {};
 			class healSelf {};
 			class unitCanSee {};
 			class unitHit {};
 			class unitKilled {};
 			class unitReloaded {};
+			class unitRemoveAllGear {};			
 		};
 		class GMS_Vehicles {
 			file = "GMSCore\Compiles\Vehicles";

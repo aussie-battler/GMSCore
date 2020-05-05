@@ -11,7 +11,14 @@
 */
 
 #include "\GMSCore\Init\GMS_defines.hpp"
-private _unit = _this;
+private "_unit";
+if (typeName _this isEqualTo "ARRAY") then 
+{
+	_unit = _this select 0;
+} else {
+	_unit = _this;
+};
+ 
 removeVest _unit;
 removeHeadgear _unit;
 removeGoggles _unit;

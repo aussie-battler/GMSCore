@@ -41,6 +41,9 @@ params[
 ];
 
 private _p = ["_pos","_units","_side","_baseSkill","_alertDistance","_intelligence","_bodycleanuptimer","_maxReloads","_removeLaunchers","_removeNVG","_minDamageToHeal","_maxHeals","_smokeShell"];
+{
+	diag_log format["_spawnInfantryGroup: %1 = %2",_p select _forEachIndex,_x];
+} forEach _this;
 
 //  [format["GMS_fnc_spawnInfantryGroup: _groupPos = %1 | _units = %2 | _side = %5 | _alertDistance = %3 | _intelligence = %4 | _side %5",_pos,_units,_alertDistance,_intelligence,_side]] call GMS_fnc_log;
 private _group = [_side] call GMS_fnc_createGroup;
