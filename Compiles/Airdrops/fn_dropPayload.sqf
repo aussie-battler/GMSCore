@@ -45,12 +45,12 @@ if (typeName _payload isEqualTo "GROUP") then
 	detach _payload;
 	deleteVehicle _chute;
 	_pos = getPosATL _payload;
-	_payload setPosATL[_pos select 0,_pos select 1,0.2];
-	_payload setVectorUp[0,0,1];
+	_payload setPosATL[_pos select 0,_pos select 1,1];
+
 	//uiSleep 1;
 	if (_allowDamage) then {_payload allowDamage true};
 	if (_visibleMarker) then {[_payload,300] call GMS_fnc_visibleMarker};
-	//diag_log format["fn_dropPayload: _mapMarker = %1",_mapMarker];
+
 	if (_mapMarker) then 
 	{
 		_marker = createMarker[format["payload%1",_payload],getPos _payload];
